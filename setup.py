@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='controller_mouse',
     version='1.0.0',
-    packages=['controller_mouse'],
+    packages=['mouse'],
     url='',
     license='',
     author='Taro Yamaka',
