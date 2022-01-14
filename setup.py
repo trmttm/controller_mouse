@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(
-    name='controller_mouse',
+    name='mouse',
     version='1.0.0',
-    packages=['mouse'],
+    packages=[],
     url='',
     license='',
     author='Taro Yamaka',
