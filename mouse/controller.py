@@ -63,15 +63,11 @@ class MouseController(MouseControllerABC):
                 impl.handle_request(self._commands, key, common_arguments_copy, unique_kwargs)
 
                 self._save_mouse_position(common_arguments_copy)
-                self._save_clicked_position(common_arguments_copy)
+                if common_args.get('gesture') == cns.CLICK:
+                    self._clicked_coordinate = common_args['x'], common_args['y']
 
     def _save_mouse_position(self, request: dict):
         self._previous_coordinate = request['x'], request['y']
-
-    def _save_clicked_position(self, request: dict):
-        save_clicked_position = request.get(cns.save_click_coordinate, None)
-        if save_clicked_position:
-            self._clicked_coordinate = request['x'], request['y']
 
     @staticmethod
     def is_left_click(request: dict) -> bool:
